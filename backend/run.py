@@ -28,7 +28,8 @@ def main():
     # Configuration
     host = os.getenv('API_HOST', 'localhost')
     port = int(os.getenv('API_PORT', '8000'))
-    reload = os.getenv('ENV', 'development') == 'development'
+    # Disable reload in Replit environment to avoid process tracking issues
+    reload = False
     
     print(f"🚀 Starting AI English Tutor Backend Server...")
     print(f"📡 Server will be available at: http://{host}:{port}")

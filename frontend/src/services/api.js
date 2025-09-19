@@ -1,8 +1,15 @@
 import axios from 'axios';
 
 // Create axios instance with base configuration
+// In Replit, use relative URLs for same-domain backend communication
+const baseURL = import.meta.env.VITE_API_URL || (
+  window.location.origin.includes('replit') 
+    ? `${window.location.protocol}//${window.location.hostname}:8000`
+    : 'http://localhost:8000'
+);
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://d1f4dd67-7915-435f-8b4f-f14a04f835c2-00-9wgy2r49kaoe.pike.replit.dev:8000',
+  baseURL: baseURL,
   timeout: 30000, // 30 seconds timeout
   headers: {
     'Content-Type': 'application/json',

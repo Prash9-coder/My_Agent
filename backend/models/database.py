@@ -14,7 +14,8 @@ from sqlalchemy.pool import StaticPool
 logger = logging.getLogger(__name__)
 
 # Database configuration
-DATABASE_URL = os.getenv('DATABASE_URL', 'sqlite:///./ai_english_tutor.db')
+# Force SQLite for Replit environment instead of auto-provisioned PostgreSQL
+DATABASE_URL = 'sqlite:///./ai_english_tutor.db'
 
 # SQLAlchemy setup
 engine = create_engine(
