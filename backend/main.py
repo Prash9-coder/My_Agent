@@ -81,8 +81,12 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",  # React dev server
     "http://localhost:5173",  # Vite dev server
+    "http://localhost:5000",  # Replit frontend port
     "http://127.0.0.1:3000",
     "http://127.0.0.1:5173",
+    "http://127.0.0.1:5000",
+    "https://d1f4dd67-7915-435f-8b4f-f14a04f835c2-00-9wgy2r49kaoe.pike.replit.dev",  # Replit domain
+    "*",  # Allow all origins for Replit environment
 ]
 
 app.add_middleware(
