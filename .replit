@@ -6,3 +6,4 @@ packages = ["libxcrypt"]
 
 [agent]
 expertMode = true
+integrations = ["python_gemini:1.0.0"]
