@@ -1,0 +1,101 @@
+/* Additional custom styles for the AI English Tutor app */
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Message bubble styles */
+.message-bubble {
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+/* Custom scrollbar for message area */
+.messages-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.5);
+  border-radius: 2px;
+}
+
+/* Voice recording animation */
+@keyframes recordingPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.recording-animation {
+  animation: recordingPulse 1s ease-in-out infinite;
+}
+
+/* Pronunciation guide styling */
+.pronunciation {
+  font-family: 'Courier New', monospace;
+  font-style: italic;
+  color: #6366f1;
+}
+
+/* Telugu text optimization */
+.telugu-text {
+  font-family: 'Noto Sans Telugu', 'Telugu Sangam MN', 'Telugu MN', sans-serif;
+  line-height: 1.6;
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+/* Progress indicators */
+.progress-ring {
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Loading states */
+.loading-dots::after {
+  content: '';
+  animation: loadingDots 1.5s infinite;
+}
+
+@keyframes loadingDots {
+  0%, 20% {
+    content: '.';
+  }
+  40% {
+    content: '..';
+  }
+  60%, 100% {
+    content: '...';
+  }
+}
