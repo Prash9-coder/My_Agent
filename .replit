@@ -60,3 +60,8 @@ exposeLocalhost = true
 [[ports]]
 localPort = 42759
 externalPort = 3000
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["bash", "-c", "cd backend && python run.py & cd frontend && npm run preview"]
+build = ["npm", "run", "build"]
