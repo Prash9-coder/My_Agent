@@ -40,7 +40,7 @@ class AITutorService:
             api_key = os.getenv('GEMINI_API_KEY')
             if api_key:
                 genai.configure(api_key=api_key)
-                model_name = os.getenv('GEMINI_MODEL', 'gemini-pro')
+                model_name = os.getenv('GEMINI_MODEL', 'gemini-2.5-flash')
                 self.model = genai.GenerativeModel(model_name)
                 logger.info("✅ Google Gemini client initialized")
             else:
